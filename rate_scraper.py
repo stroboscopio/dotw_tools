@@ -1,6 +1,17 @@
 
 def get_rates(username, password, hotel_codes, start_check, end_check, los=1, prog=1, curr='413'):
-    
+    """
+    This function allows admin users of http://us.dotwconnect.com to download and export rates for as many hotels as they want.
+    Variables:
+    hotel_codes = has to be an array of codes, even of length 0; i.e. ['00000'] or ['000000', '000001'] 
+    start_check = starting date of the check. format is 'YYYY-MM-DD'
+    end_check = end date of the check. format is 'YYYY-MM-DD'
+    los = integer, length of stay
+    prog = integer, interval between each check
+    curr = currency code. defaults to EUR
+    Function outputs a csv file with the checks for the intended period.
+    Have fun
+    """
     import requests
     import csv
     import re
